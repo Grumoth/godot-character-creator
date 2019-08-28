@@ -1,0 +1,33 @@
+[gd_resource type="ShaderMaterial" load_steps=6 format=2]
+
+[ext_resource path="res://MainCharacter/Material/Textures/hair_textures/hair_n.png" type="Texture" id=1]
+[ext_resource path="res://MainCharacter/Material/Textures/hair_textures/hair_alpha.png" type="Texture" id=2]
+[ext_resource path="res://MainCharacter/Material/Textures/hair_textures/hair_ao.png" type="Texture" id=3]
+[ext_resource path="res://MainCharacter/Material/hair.shader" type="Shader" id=4]
+[ext_resource path="res://MainCharacter/Material/Textures/hair_textures/hair_masks_rt.png" type="Texture" id=5]
+
+[resource]
+shader = ExtResource( 4 )
+shader_param/hairColor = Color( 0.223529, 0.101961, 0.00784314, 1 )
+shader_param/rootColor = Color( 0.321569, 0.176471, 0.0705882, 1 )
+shader_param/rootOffset = 5.95
+shader_param/tipColor = Color( 0.72549, 0.501961, 0.266667, 1 )
+shader_param/tipOffset = 4.36
+shader_param/specular = 0.13
+shader_param/metallic = 0.01
+shader_param/roughness = 0.282
+shader_param/normal_scale = -0.072
+shader_param/anisotropy_ratio = 1.0
+shader_param/ao_light_affect = 1.0
+shader_param/punch = 1.74
+shader_param/roughness_texture_channel = Plane( 1, 0, 0, 0 )
+shader_param/ao_texture_channel = Plane( 1, 0, 0, 0 )
+shader_param/uv1_scale = Vector3( 1, 1, 1 )
+shader_param/uv1_offset = Vector3( 0, 0, 0 )
+shader_param/uv2_scale = Vector3( 1, 1, 1 )
+shader_param/uv2_offset = Vector3( 0, 0, 0 )
+shader_param/texture_albedo = ExtResource( 2 )
+shader_param/texture_normal = ExtResource( 1 )
+shader_param/masks_rt = ExtResource( 5 )
+shader_param/texture_roughness = ExtResource( 2 )
+shader_param/texture_ambient_occlusion = ExtResource( 3 )

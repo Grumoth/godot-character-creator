@@ -1,0 +1,952 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://GUI/Theme/Theme.tres" type="Theme" id=1]
+[ext_resource path="res://GUI/CharacterCreation.gd" type="Script" id=2]
+[ext_resource path="res://GUI/SliderBox.tscn" type="PackedScene" id=3]
+[ext_resource path="res://GUI/Panel.gd" type="Script" id=4]
+[ext_resource path="res://GUI/ColorPickerButton.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Presets/preset1.png" type="Texture" id=6]
+[ext_resource path="res://GUI/Theme/PresetButtonTheme.tres" type="Theme" id=7]
+[ext_resource path="res://GUI/Randomizer.gd" type="Script" id=8]
+[ext_resource path="res://GUI/EditBehaviour.gd" type="Script" id=9]
+[ext_resource path="res://GUI/Theme/Roboto-Bold.ttf" type="DynamicFontData" id=10]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.105882, 0.227451, 0.282353, 1 )
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.145098, 0.419608, 0.184314, 1 )
+border_blend = true
+shadow_size = 6
+
+[sub_resource type="DynamicFont" id=2]
+size = 30
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 10 )
+
+[node name="CharacterCreation" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="RichTextLabel" parent="."]
+anchor_bottom = 1.0
+margin_left = 1238.28
+margin_top = 36.1767
+margin_right = 1551.28
+margin_bottom = -9.8233
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+anchor_right = 0.191
+anchor_bottom = 1.0
+margin_top = 5.0
+margin_right = -20.72
+margin_bottom = 411.0
+mouse_filter = 1
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="vb" type="VBoxContainer" parent="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bt_presets" type="Button" parent="Panel/vb"]
+margin_right = 346.0
+margin_bottom = 31.0
+text = "Presets"
+
+[node name="presets" type="VBoxContainer" parent="Panel/vb"]
+margin_top = 35.0
+margin_right = 346.0
+margin_bottom = 168.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GridContainer" type="GridContainer" parent="Panel/vb/presets"]
+margin_right = 346.0
+margin_bottom = 133.0
+custom_constants/vseparation = 5
+custom_constants/hseparation = 5
+columns = 5
+
+[node name="preset1" type="TextureButton" parent="Panel/vb/presets/GridContainer"]
+margin_right = 64.0
+margin_bottom = 64.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 6 )
+stretch_mode = 5
+
+[node name="preset2" type="TextureButton" parent="Panel/vb/presets/GridContainer"]
+margin_left = 69.0
+margin_right = 133.0
+margin_bottom = 64.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 6 )
+stretch_mode = 5
+
+[node name="preset3" type="TextureButton" parent="Panel/vb/presets/GridContainer"]
+margin_left = 138.0
+margin_right = 202.0
+margin_bottom = 64.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 6 )
+stretch_mode = 5
+
+[node name="preset4" type="TextureButton" parent="Panel/vb/presets/GridContainer"]
+margin_left = 207.0
+margin_right = 271.0
+margin_bottom = 64.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 6 )
+stretch_mode = 5
+
+[node name="preset5" type="TextureButton" parent="Panel/vb/presets/GridContainer"]
+margin_left = 276.0
+margin_right = 340.0
+margin_bottom = 64.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 6 )
+stretch_mode = 5
+
+[node name="preset6" type="TextureButton" parent="Panel/vb/presets/GridContainer"]
+margin_top = 69.0
+margin_right = 64.0
+margin_bottom = 133.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 6 )
+stretch_mode = 5
+
+[node name="preset7" type="TextureButton" parent="Panel/vb/presets/GridContainer"]
+margin_left = 69.0
+margin_top = 69.0
+margin_right = 133.0
+margin_bottom = 133.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 6 )
+stretch_mode = 5
+
+[node name="preset8" type="TextureButton" parent="Panel/vb/presets/GridContainer"]
+margin_left = 138.0
+margin_top = 69.0
+margin_right = 202.0
+margin_bottom = 133.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 6 )
+stretch_mode = 5
+
+[node name="preset9" type="TextureButton" parent="Panel/vb/presets/GridContainer"]
+margin_left = 207.0
+margin_top = 69.0
+margin_right = 271.0
+margin_bottom = 133.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 6 )
+stretch_mode = 5
+
+[node name="preset10" type="TextureButton" parent="Panel/vb/presets/GridContainer"]
+margin_left = 276.0
+margin_top = 69.0
+margin_right = 340.0
+margin_bottom = 133.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 6 )
+stretch_mode = 5
+
+[node name="bt_body" type="Button" parent="Panel/vb"]
+margin_top = 172.0
+margin_right = 346.0
+margin_bottom = 203.0
+text = "Body"
+
+[node name="body" type="VBoxContainer" parent="Panel/vb"]
+margin_top = 207.0
+margin_right = 346.0
+margin_bottom = 331.0
+
+[node name="m_chubby" parent="Panel/vb/body" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 346.0
+margin_bottom = 39.0
+
+[node name="vb" type="VBoxContainer" parent="Panel/vb/body"]
+margin_top = 43.0
+margin_right = 346.0
+margin_bottom = 124.0
+
+[node name="Label" type="Label" parent="Panel/vb/body/vb"]
+margin_right = 346.0
+margin_bottom = 19.0
+text = "Skin Tone"
+align = 1
+
+[node name="skinTonePresets" type="HBoxContainer" parent="Panel/vb/body/vb"]
+margin_top = 23.0
+margin_right = 346.0
+margin_bottom = 46.0
+alignment = 1
+
+[node name="tone1" type="Button" parent="Panel/vb/body/vb/skinTonePresets"]
+margin_right = 31.0
+margin_bottom = 23.0
+size_flags_horizontal = 3
+theme = ExtResource( 7 )
+
+[node name="tone2" type="Button" parent="Panel/vb/body/vb/skinTonePresets"]
+margin_left = 35.0
+margin_right = 66.0
+margin_bottom = 23.0
+size_flags_horizontal = 3
+theme = ExtResource( 7 )
+
+[node name="tone3" type="Button" parent="Panel/vb/body/vb/skinTonePresets"]
+margin_left = 70.0
+margin_right = 101.0
+margin_bottom = 23.0
+size_flags_horizontal = 3
+theme = ExtResource( 7 )
+
+[node name="tone4" type="Button" parent="Panel/vb/body/vb/skinTonePresets"]
+margin_left = 105.0
+margin_right = 136.0
+margin_bottom = 23.0
+size_flags_horizontal = 3
+theme = ExtResource( 7 )
+
+[node name="tone5" type="Button" parent="Panel/vb/body/vb/skinTonePresets"]
+margin_left = 140.0
+margin_right = 171.0
+margin_bottom = 23.0
+size_flags_horizontal = 3
+theme = ExtResource( 7 )
+
+[node name="tone6" type="Button" parent="Panel/vb/body/vb/skinTonePresets"]
+margin_left = 175.0
+margin_right = 206.0
+margin_bottom = 23.0
+size_flags_horizontal = 3
+theme = ExtResource( 7 )
+
+[node name="tone7" type="Button" parent="Panel/vb/body/vb/skinTonePresets"]
+margin_left = 210.0
+margin_right = 241.0
+margin_bottom = 23.0
+size_flags_horizontal = 3
+theme = ExtResource( 7 )
+
+[node name="tone8" type="Button" parent="Panel/vb/body/vb/skinTonePresets"]
+margin_left = 245.0
+margin_right = 276.0
+margin_bottom = 23.0
+size_flags_horizontal = 3
+theme = ExtResource( 7 )
+
+[node name="tone9" type="Button" parent="Panel/vb/body/vb/skinTonePresets"]
+margin_left = 280.0
+margin_right = 311.0
+margin_bottom = 23.0
+size_flags_horizontal = 3
+theme = ExtResource( 7 )
+
+[node name="random" type="Button" parent="Panel/vb/body/vb/skinTonePresets"]
+margin_left = 315.0
+margin_right = 346.0
+margin_bottom = 23.0
+size_flags_horizontal = 3
+theme = ExtResource( 7 )
+text = "R"
+
+[node name="skinTone_body" parent="Panel/vb/body/vb" instance=ExtResource( 5 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 50.0
+margin_right = 346.0
+margin_bottom = 81.0
+
+[node name="bt_head" type="Button" parent="Panel/vb"]
+margin_top = 335.0
+margin_right = 346.0
+margin_bottom = 366.0
+text = "Head"
+
+[node name="head" type="VBoxContainer" parent="Panel/vb"]
+margin_top = 370.0
+margin_right = 346.0
+margin_bottom = 759.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="e_eyebrows" parent="Panel/vb/head" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 346.0
+margin_bottom = 39.0
+
+[node name="a_asymmetry" parent="Panel/vb/head" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 43.0
+margin_right = 346.0
+margin_bottom = 82.0
+
+[node name="w_eyeBrowHeight" parent="Panel/vb/head" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 86.0
+margin_right = 346.0
+margin_bottom = 125.0
+
+[node name="d_beard" parent="Panel/vb/head" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 129.0
+margin_right = 346.0
+margin_bottom = 168.0
+
+[node name="p_facePaint" parent="Panel/vb/head" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 172.0
+margin_right = 346.0
+margin_bottom = 211.0
+
+[node name="sLabel" parent="Panel/vb/head/p_facePaint" index="0"]
+margin_right = 346.0
+text = "p_facePaint"
+
+[node name="slider" parent="Panel/vb/head/p_facePaint" index="1"]
+margin_right = 346.0
+max_value = 4.0
+step = 1.0
+
+[node name="vb" type="VBoxContainer" parent="Panel/vb/head"]
+margin_top = 215.0
+margin_right = 346.0
+margin_bottom = 269.0
+
+[node name="Label" type="Label" parent="Panel/vb/head/vb"]
+margin_right = 346.0
+margin_bottom = 19.0
+text = "Face Paint Color"
+align = 1
+
+[node name="facePaintColor_head" parent="Panel/vb/head/vb" instance=ExtResource( 5 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 23.0
+margin_right = 346.0
+margin_bottom = 54.0
+
+[node name="vb2" type="VBoxContainer" parent="Panel/vb/head"]
+margin_top = 273.0
+margin_right = 346.0
+margin_bottom = 389.0
+
+[node name="Label" type="Label" parent="Panel/vb/head/vb2"]
+margin_right = 346.0
+margin_bottom = 19.0
+text = "Eye Color"
+align = 1
+
+[node name="eyeColorPresets" type="HBoxContainer" parent="Panel/vb/head/vb2"]
+margin_top = 23.0
+margin_right = 346.0
+margin_bottom = 46.0
+alignment = 1
+
+[node name="black" type="Button" parent="Panel/vb/head/vb2/eyeColorPresets"]
+margin_right = 31.0
+margin_bottom = 23.0
+size_flags_horizontal = 3
+theme = ExtResource( 7 )
+
+[node name="dark_brown" type="Button" parent="Panel/vb/head/vb2/eyeColorPresets"]
+margin_left = 35.0
+margin_right = 66.0
+margin_bottom = 23.0
+size_flags_horizontal = 3
+theme = ExtResource( 7 )
+
+[node name="medium_brown" type="Button" parent="Panel/vb/head/vb2/eyeColorPresets"]
+margin_left = 70.0
+margin_right = 101.0
+margin_bottom = 23.0
+size_flags_horizontal = 3
+theme = ExtResource( 7 )
+
+[node name="light_brown" type="Button" parent="Panel/vb/head/vb2/eyeColorPresets"]
+margin_left = 105.0
+margin_right = 136.0
+margin_bottom = 23.0
+size_flags_horizontal = 3
+theme = ExtResource( 7 )
+
+[node name="dark_green" type="Button" parent="Panel/vb/head/vb2/eyeColorPresets"]
+margin_left = 140.0
+margin_right = 171.0
+margin_bottom = 23.0
+size_flags_horizontal = 3
+theme = ExtResource( 7 )
+
+[node name="light_green" type="Button" parent="Panel/vb/head/vb2/eyeColorPresets"]
+margin_left = 175.0
+margin_right = 206.0
+margin_bottom = 23.0
+size_flags_horizontal = 3
+theme = ExtResource( 7 )
+
+[node name="dark_blue" type="Button" parent="Panel/vb/head/vb2/eyeColorPresets"]
+margin_left = 210.0
+margin_right = 241.0
+margin_bottom = 23.0
+size_flags_horizontal = 3
+theme = ExtResource( 7 )
+
+[node name="light_blue" type="Button" parent="Panel/vb/head/vb2/eyeColorPresets"]
+margin_left = 245.0
+margin_right = 276.0
+margin_bottom = 23.0
+size_flags_horizontal = 3
+theme = ExtResource( 7 )
+
+[node name="grey" type="Button" parent="Panel/vb/head/vb2/eyeColorPresets"]
+margin_left = 280.0
+margin_right = 311.0
+margin_bottom = 23.0
+size_flags_horizontal = 3
+theme = ExtResource( 7 )
+
+[node name="random" type="Button" parent="Panel/vb/head/vb2/eyeColorPresets"]
+margin_left = 315.0
+margin_right = 346.0
+margin_bottom = 23.0
+size_flags_horizontal = 3
+theme = ExtResource( 7 )
+text = "R"
+
+[node name="eyeColor1_eyes" parent="Panel/vb/head/vb2" instance=ExtResource( 5 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 50.0
+margin_right = 346.0
+margin_bottom = 81.0
+
+[node name="eyeColor2_eyes" parent="Panel/vb/head/vb2" instance=ExtResource( 5 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 85.0
+margin_right = 346.0
+margin_bottom = 116.0
+
+[node name="bt_hair" type="Button" parent="Panel/vb"]
+margin_top = 763.0
+margin_right = 346.0
+margin_bottom = 794.0
+text = "Hair"
+
+[node name="hair" type="VBoxContainer" parent="Panel/vb"]
+margin_top = 798.0
+margin_right = 346.0
+margin_bottom = 1230.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="h_hairCut" parent="Panel/vb/hair" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 346.0
+margin_bottom = 39.0
+
+[node name="b_hairLength" parent="Panel/vb/hair" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 43.0
+margin_right = 346.0
+margin_bottom = 82.0
+
+[node name="vb" type="VBoxContainer" parent="Panel/vb/hair"]
+margin_top = 86.0
+margin_right = 346.0
+margin_bottom = 218.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="lbColorPresets" type="Label" parent="Panel/vb/hair/vb"]
+margin_right = 346.0
+margin_bottom = 19.0
+text = "Hair Color"
+align = 1
+
+[node name="HairColorPresets" type="HBoxContainer" parent="Panel/vb/hair/vb"]
+margin_top = 23.0
+margin_right = 346.0
+margin_bottom = 46.0
+alignment = 1
+
+[node name="black" type="Button" parent="Panel/vb/hair/vb/HairColorPresets"]
+margin_right = 31.0
+margin_bottom = 23.0
+size_flags_horizontal = 3
+theme = ExtResource( 7 )
+
+[node name="dark_brown" type="Button" parent="Panel/vb/hair/vb/HairColorPresets"]
+margin_left = 35.0
+margin_right = 66.0
+margin_bottom = 23.0
+size_flags_horizontal = 3
+theme = ExtResource( 7 )
+
+[node name="light_brown" type="Button" parent="Panel/vb/hair/vb/HairColorPresets"]
+margin_left = 70.0
+margin_right = 101.0
+margin_bottom = 23.0
+size_flags_horizontal = 3
+theme = ExtResource( 7 )
+
+[node name="dark_blonde" type="Button" parent="Panel/vb/hair/vb/HairColorPresets"]
+margin_left = 105.0
+margin_right = 136.0
+margin_bottom = 23.0
+size_flags_horizontal = 3
+theme = ExtResource( 7 )
+
+[node name="light_blonde" type="Button" parent="Panel/vb/hair/vb/HairColorPresets"]
+margin_left = 140.0
+margin_right = 171.0
+margin_bottom = 23.0
+size_flags_horizontal = 3
+theme = ExtResource( 7 )
+
+[node name="dark_ginger" type="Button" parent="Panel/vb/hair/vb/HairColorPresets"]
+margin_left = 175.0
+margin_right = 206.0
+margin_bottom = 23.0
+size_flags_horizontal = 3
+theme = ExtResource( 7 )
+
+[node name="light_ginger" type="Button" parent="Panel/vb/hair/vb/HairColorPresets"]
+margin_left = 210.0
+margin_right = 241.0
+margin_bottom = 23.0
+size_flags_horizontal = 3
+theme = ExtResource( 7 )
+
+[node name="grey" type="Button" parent="Panel/vb/hair/vb/HairColorPresets"]
+margin_left = 245.0
+margin_right = 276.0
+margin_bottom = 23.0
+size_flags_horizontal = 3
+theme = ExtResource( 7 )
+
+[node name="white" type="Button" parent="Panel/vb/hair/vb/HairColorPresets"]
+margin_left = 280.0
+margin_right = 311.0
+margin_bottom = 23.0
+size_flags_horizontal = 3
+theme = ExtResource( 7 )
+
+[node name="random" type="Button" parent="Panel/vb/hair/vb/HairColorPresets"]
+margin_left = 315.0
+margin_right = 346.0
+margin_bottom = 23.0
+size_flags_horizontal = 3
+theme = ExtResource( 7 )
+text = "R"
+
+[node name="hb" type="HBoxContainer" parent="Panel/vb/hair/vb"]
+margin_top = 50.0
+margin_right = 346.0
+margin_bottom = 124.0
+grow_horizontal = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="vb" type="VBoxContainer" parent="Panel/vb/hair/vb/hb"]
+margin_right = 134.0
+margin_bottom = 74.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="rootColor_hair" parent="Panel/vb/hair/vb/hb/vb" instance=ExtResource( 5 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 134.0
+margin_bottom = 31.0
+
+[node name="k_rootOffset" parent="Panel/vb/hair/vb/hb/vb" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 35.0
+margin_right = 134.0
+margin_bottom = 74.0
+
+[node name="vb2" type="VBoxContainer" parent="Panel/vb/hair/vb/hb"]
+margin_left = 138.0
+margin_right = 208.0
+margin_bottom = 74.0
+
+[node name="hairColor_hair" parent="Panel/vb/hair/vb/hb/vb2" instance=ExtResource( 5 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 70.0
+margin_bottom = 51.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="lbHairColor" type="Label" parent="Panel/vb/hair/vb/hb/vb2"]
+margin_top = 55.0
+margin_right = 70.0
+margin_bottom = 74.0
+text = "Hair Color"
+align = 1
+
+[node name="vb3" type="VBoxContainer" parent="Panel/vb/hair/vb/hb"]
+margin_left = 212.0
+margin_right = 346.0
+margin_bottom = 74.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="tipColor_hair" parent="Panel/vb/hair/vb/hb/vb3" instance=ExtResource( 5 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 134.0
+margin_bottom = 31.0
+
+[node name="k_tipOffset" parent="Panel/vb/hair/vb/hb/vb3" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 35.0
+margin_right = 134.0
+margin_bottom = 74.0
+
+[node name="HSeparator" type="HSeparator" parent="Panel/vb/hair/vb"]
+margin_top = 128.0
+margin_right = 346.0
+margin_bottom = 132.0
+
+[node name="i_beard" parent="Panel/vb/hair" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 222.0
+margin_right = 346.0
+margin_bottom = 261.0
+
+[node name="c_beardLength" parent="Panel/vb/hair" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 265.0
+margin_right = 346.0
+margin_bottom = 304.0
+
+[node name="vb2" type="VBoxContainer" parent="Panel/vb/hair"]
+margin_top = 308.0
+margin_right = 346.0
+margin_bottom = 432.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="lbColorPresets" type="Label" parent="Panel/vb/hair/vb2"]
+margin_right = 346.0
+margin_bottom = 19.0
+text = "Beard Color"
+align = 1
+
+[node name="BeardColorPresets" type="HBoxContainer" parent="Panel/vb/hair/vb2"]
+margin_top = 23.0
+margin_right = 346.0
+margin_bottom = 46.0
+alignment = 1
+
+[node name="black" type="Button" parent="Panel/vb/hair/vb2/BeardColorPresets"]
+margin_right = 31.0
+margin_bottom = 23.0
+size_flags_horizontal = 3
+theme = ExtResource( 7 )
+
+[node name="dark_brown" type="Button" parent="Panel/vb/hair/vb2/BeardColorPresets"]
+margin_left = 35.0
+margin_right = 66.0
+margin_bottom = 23.0
+size_flags_horizontal = 3
+theme = ExtResource( 7 )
+
+[node name="light_brown" type="Button" parent="Panel/vb/hair/vb2/BeardColorPresets"]
+margin_left = 70.0
+margin_right = 101.0
+margin_bottom = 23.0
+size_flags_horizontal = 3
+theme = ExtResource( 7 )
+
+[node name="dark_blonde" type="Button" parent="Panel/vb/hair/vb2/BeardColorPresets"]
+margin_left = 105.0
+margin_right = 136.0
+margin_bottom = 23.0
+size_flags_horizontal = 3
+theme = ExtResource( 7 )
+
+[node name="light_blonde" type="Button" parent="Panel/vb/hair/vb2/BeardColorPresets"]
+margin_left = 140.0
+margin_right = 171.0
+margin_bottom = 23.0
+size_flags_horizontal = 3
+theme = ExtResource( 7 )
+
+[node name="dark_ginger" type="Button" parent="Panel/vb/hair/vb2/BeardColorPresets"]
+margin_left = 175.0
+margin_right = 206.0
+margin_bottom = 23.0
+size_flags_horizontal = 3
+theme = ExtResource( 7 )
+
+[node name="light_ginger" type="Button" parent="Panel/vb/hair/vb2/BeardColorPresets"]
+margin_left = 210.0
+margin_right = 241.0
+margin_bottom = 23.0
+size_flags_horizontal = 3
+theme = ExtResource( 7 )
+
+[node name="grey" type="Button" parent="Panel/vb/hair/vb2/BeardColorPresets"]
+margin_left = 245.0
+margin_right = 276.0
+margin_bottom = 23.0
+size_flags_horizontal = 3
+theme = ExtResource( 7 )
+
+[node name="white" type="Button" parent="Panel/vb/hair/vb2/BeardColorPresets"]
+margin_left = 280.0
+margin_right = 311.0
+margin_bottom = 23.0
+size_flags_horizontal = 3
+theme = ExtResource( 7 )
+
+[node name="random" type="Button" parent="Panel/vb/hair/vb2/BeardColorPresets"]
+margin_left = 315.0
+margin_right = 346.0
+margin_bottom = 23.0
+size_flags_horizontal = 3
+theme = ExtResource( 7 )
+text = "R"
+
+[node name="hb" type="HBoxContainer" parent="Panel/vb/hair/vb2"]
+margin_top = 50.0
+margin_right = 346.0
+margin_bottom = 124.0
+grow_horizontal = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="vb" type="VBoxContainer" parent="Panel/vb/hair/vb2/hb"]
+margin_right = 134.0
+margin_bottom = 74.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="rootColor_beard" parent="Panel/vb/hair/vb2/hb/vb" instance=ExtResource( 5 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 134.0
+margin_bottom = 31.0
+
+[node name="o_rootOffset" parent="Panel/vb/hair/vb2/hb/vb" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 35.0
+margin_right = 134.0
+margin_bottom = 74.0
+
+[node name="vb2" type="VBoxContainer" parent="Panel/vb/hair/vb2/hb"]
+margin_left = 138.0
+margin_right = 208.0
+margin_bottom = 74.0
+
+[node name="hairColor_beard" parent="Panel/vb/hair/vb2/hb/vb2" instance=ExtResource( 5 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 70.0
+margin_bottom = 51.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="lbHairColor" type="Label" parent="Panel/vb/hair/vb2/hb/vb2"]
+margin_top = 55.0
+margin_right = 70.0
+margin_bottom = 74.0
+text = "Hair Color"
+align = 1
+
+[node name="vb3" type="VBoxContainer" parent="Panel/vb/hair/vb2/hb"]
+margin_left = 212.0
+margin_right = 346.0
+margin_bottom = 74.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="tipColor_beard" parent="Panel/vb/hair/vb2/hb/vb3" instance=ExtResource( 5 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 134.0
+margin_bottom = 31.0
+
+[node name="o_tipOffset" parent="Panel/vb/hair/vb2/hb/vb3" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 35.0
+margin_right = 134.0
+margin_bottom = 74.0
+
+[node name="HB" type="HBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -166.0
+margin_top = -80.0
+margin_right = 166.0
+margin_bottom = -16.0
+mouse_filter = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VB" type="VBoxContainer" parent="HB"]
+margin_right = 324.0
+margin_bottom = 64.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="nameText" type="LineEdit" parent="HB/VB"]
+margin_right = 324.0
+margin_bottom = 29.0
+size_flags_vertical = 3
+align = 1
+expand_to_text_length = true
+context_menu_enabled = false
+clear_button_enabled = true
+placeholder_text = "Character Name"
+
+[node name="HB" type="HBoxContainer" parent="HB/VB"]
+margin_top = 33.0
+margin_right = 324.0
+margin_bottom = 64.0
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="randomButton" type="Button" parent="HB/VB/HB"]
+margin_right = 105.0
+margin_bottom = 31.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Randomize"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="savePreset" type="Button" parent="HB/VB/HB"]
+margin_left = 109.0
+margin_right = 214.0
+margin_bottom = 31.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Save Preset"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="saveCharacter" type="Button" parent="HB/VB/HB"]
+margin_left = 218.0
+margin_right = 324.0
+margin_bottom = 31.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "SAVE"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="loadPreset" type="Button" parent="HB/VB/HB"]
+visible = false
+margin_left = 376.0
+margin_right = 562.0
+margin_bottom = 25.0
+size_flags_horizontal = 3
+text = "Load Last"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="vp" type="Button" parent="HB"]
+margin_left = 328.0
+margin_right = 332.0
+margin_bottom = 64.0
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 1 )
+custom_styles/focus = SubResource( 1 )
+custom_styles/disabled = SubResource( 1 )
+custom_styles/normal = SubResource( 1 )
+button_mask = 0
+
+[node name="Randomizer" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EditBehaviour" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="."]
+visible = false
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -39.0
+margin_top = 2.0
+margin_bottom = 38.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0.890196, 0.0980392, 1 )
+text = "60"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="text_changed" from="HB/VB/nameText" to="." method="_on_nameText_text_changed"]
+[connection signal="pressed" from="HB/VB/HB/randomButton" to="." method="_on_randomButton_pressed"]
+[connection signal="pressed" from="HB/VB/HB/savePreset" to="." method="_on_savePreset_pressed"]
+[connection signal="pressed" from="HB/VB/HB/saveCharacter" to="." method="_on_saveCharacter_pressed"]
+[connection signal="pressed" from="HB/VB/HB/loadPreset" to="." method="_on_loadPreset_pressed"]
+
+[editable path="Panel/vb/head/p_facePaint"]

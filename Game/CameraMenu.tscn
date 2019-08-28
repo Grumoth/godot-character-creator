@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Game/CameraMenu.gd" type="Script" id=1]
+
+[node name="CameraMenu" type="Camera"]
+transform = Transform( 1, 0, 0, 0, 0.987944, 0.154814, 0, -0.154814, 0.987944, -0.0280299, 1.30335, 2.14765 )
+current = true
+fov = 59.1667
+far = 126.2
+script = ExtResource( 1 )

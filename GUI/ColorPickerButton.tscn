@@ -1,0 +1,43 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends ColorPickerButton
+var param:String
+var mat:String
+var n : String
+func _ready():
+	var split = name.split(\"_\")
+	param=split[0]
+	mat=split[1]
+	n = name
+
+func _on_colorPicker_color_changed(color):
+	owner._colorPickerChanged(param,mat,color)
+
+func _on_colorPicker_pressed():
+#	return
+	var ch = get_child(0).get_child(0)
+	ch.get_child(0).hide()
+	ch.get_child(2).hide()
+	ch.get_child(3).hide()
+	ch.get_child(4).hide()
+	ch.get_child(5).hide()
+	ch.get_child(6).hide()
+	get_child(0).rect_size = Vector2(300,200)
+	get_child(0).rect_position = Vector2(owner.get_node(\"Panel\").rect_size.x,get_global_mouse_position().y-150)
+
+
+
+"
+
+[node name="colorPicker" type="ColorPickerButton"]
+anchor_right = 0.168
+anchor_bottom = 0.031
+margin_right = 0.439972
+margin_bottom = 0.199999
+script = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="color_changed" from="." to="." method="_on_colorPicker_color_changed"]
+[connection signal="pressed" from="." to="." method="_on_colorPicker_pressed"]

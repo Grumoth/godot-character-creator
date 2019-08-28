@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://GUI/SliderBox.gd" type="Script" id=1]
+[ext_resource path="res://GUI/Theme/Theme.tres" type="Theme" id=2]
+
+[node name="Slider" type="VBoxContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+theme = ExtResource( 2 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="sLabel" type="Label" parent="."]
+margin_right = 1920.0
+margin_bottom = 19.0
+text = "Slider"
+align = 1
+
+[node name="slider" type="HSlider" parent="."]
+margin_top = 23.0
+margin_right = 1920.0
+margin_bottom = 39.0
+max_value = 1.0
+step = 0.005
+value = 0.21
+[connection signal="value_changed" from="slider" to="." method="_on_slider_value_changed"]

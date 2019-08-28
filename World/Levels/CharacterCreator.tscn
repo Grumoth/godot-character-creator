@@ -1,0 +1,117 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://MainCharacter/MainCharacter.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Game/CameraMenu.tscn" type="PackedScene" id=2]
+[ext_resource path="res://World/Levels/bg.glb" type="PackedScene" id=3]
+[ext_resource path="res://World/checker.png" type="Texture" id=4]
+[ext_resource path="res://World/lobby.hdr" type="Texture" id=5]
+[ext_resource path="res://GUI/CharacterCreation.tscn" type="PackedScene" id=6]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_color = Color( 0.313726, 0.423529, 0.564706, 0.992157 )
+metallic_specular = 0.25
+metallic_texture = ExtResource( 4 )
+roughness = 0.75
+uv1_scale = Vector3( 4, 4, 4 )
+
+[sub_resource type="Animation" id=2]
+length = 0.1
+
+[sub_resource type="Animation" id=3]
+resource_name = "cam2Test"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("CameraMenu:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( -0.0303243, 1.2797, 2.20732 ), Vector3( 0.0316261, 1.9184, 0.596222 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CameraMenu:fov")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 60.0, 35.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CameraMenu:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 2.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( -8.906, 0, 0 ), Vector3( -8.906, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+
+[sub_resource type="Animation" id=5]
+
+[sub_resource type="PanoramaSky" id=6]
+panorama = ExtResource( 5 )
+
+[sub_resource type="Environment" id=7]
+background_mode = 2
+background_sky = SubResource( 6 )
+
+[node name="main" type="Spatial"]
+
+[node name="bg" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.254238, 0, 0, 0, 0.254238, 0, 0, 0, 0.254238, 0, 0, 0 )
+
+[node name="Plane" parent="bg" index="0"]
+transform = Transform( 31.602, 0, 0, 0, 11.5338, 0, 0, 0, 11.5338, 0.0751285, -0.0776451, -37.7056 )
+material/0 = SubResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+playback_process_mode = 2
+anims/Idle = SubResource( 2 )
+anims/cam2Test = SubResource( 3 )
+anims/face = SubResource( 4 )
+anims/toFace = SubResource( 5 )
+
+[node name="CharacterCreation" parent="." instance=ExtResource( 6 )]
+
+[node name="MainCharacter" parent="." instance=ExtResource( 1 )]
+
+[node name="CameraMenu" parent="." instance=ExtResource( 2 )]
+
+[node name="SpotLight" type="SpotLight" parent="."]
+transform = Transform( 0.880767, -0.231214, 0.413268, 0, 0.872701, 0.488256, -0.47355, -0.430039, 0.768646, 0.834371, 2.41922, 1.90745 )
+light_color = Color( 0.843137, 0.843137, 0.843137, 1 )
+shadow_enabled = true
+spot_range = 18.7034
+spot_angle = 47.4
+
+[node name="SpotLight3" type="SpotLight" parent="."]
+transform = Transform( 0.882951, -0.137273, -0.448947, 0.0223402, 0.967498, -0.251892, 0.468933, 0.212378, 0.85732, -1.75796, 1.10488, 2.198 )
+light_color = Color( 0.388235, 0.47451, 0.466667, 1 )
+light_specular = 0.0
+spot_range = 9.9
+spot_angle = 47.4
+
+[node name="SpotLight2" type="SpotLight" parent="."]
+transform = Transform( -0.899285, -0.0822006, -0.42957, 0.005942, 0.979793, -0.199928, 0.437324, -0.182345, -0.880624, -0.835243, 1.17948, -1.17092 )
+light_energy = 2.83
+light_specular = 0.0
+spot_range = 9.9
+spot_angle = 47.4
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 7 )
+
+[editable path="bg"]
