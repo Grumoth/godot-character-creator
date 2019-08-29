@@ -332,6 +332,7 @@ func _sliderChange(v,type,prop):
 			character._setMaterialParameter(prop,"head",v)	
 		"p":
 			character._setParameterTexture(v,"head",prop)
+			$Panel/vb/head/p_facePaint/sLabel.text=facePaintName[v]
 		"k":
 			character._setMaterialParameter(prop,"hair",v)
 		"o":
