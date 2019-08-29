@@ -117,7 +117,7 @@ bones/48/bound_children = [ NodePath("shin_R") ]
 bones/49/bound_children = [ NodePath("foot_R") ]
 
 [node name="attachHead" type="BoneAttachment" parent="MainRig" index="0"]
-transform = Transform( 0.989431, -0.0244298, -0.142931, 0.0052563, 0.9911, -0.133013, 0.144909, 0.130856, 0.980754, -0.105091, 1.74113, -0.0779019 )
+transform = Transform( 0.985972, -0.0272765, -0.164668, 0.0027893, 0.989111, -0.147142, 0.166888, 0.144618, 0.975313, -0.103617, 1.7411, -0.0748797 )
 bone_name = "head"
 
 [node name="nose_tip" type="StaticBody" parent="MainRig/attachHead" index="0"]
@@ -212,7 +212,7 @@ transform = Transform( 1, -5.32907e-15, 0, 0, -0.997788, -0.066481, 0, 0.0664811
 shape = SubResource( 13 )
 
 [node name="upper_arm_R" type="BoneAttachment" parent="MainRig" index="1"]
-transform = Transform( -0.965545, -0.200079, 0.166407, 0.179278, -0.974908, -0.131952, 0.188633, -0.0975721, 0.977188, -0.302077, 1.55595, -0.157228 )
+transform = Transform( -0.961081, -0.204199, 0.186081, 0.183922, -0.975517, -0.12057, 0.206146, -0.0816533, 0.975108, -0.299481, 1.55734, -0.160089 )
 bone_name = "upper_arm_R"
 
 [node name="upper" type="StaticBody" parent="MainRig/upper_arm_R" index="0"]
@@ -223,7 +223,7 @@ transform = Transform( 0.6131, 0.0915081, -0.278608, -0.737934, 0.420981, -0.187
 shape = SubResource( 14 )
 
 [node name="upper_arm_L" type="BoneAttachment" parent="MainRig" index="2"]
-transform = Transform( -0.97861, 0.205678, 0.004245, -0.205133, -0.974045, -0.0956924, -0.0155471, -0.0945163, 0.995401, 0.101478, 1.60693, -0.115428 )
+transform = Transform( -0.979484, 0.201164, 0.0119657, -0.20122, -0.973066, -0.11248, -0.0109837, -0.11258, 0.993582, 0.103324, 1.60683, -0.110077 )
 bone_name = "upper_arm_L"
 
 [node name="upper" type="StaticBody" parent="MainRig/upper_arm_L" index="0"]
@@ -234,7 +234,7 @@ transform = Transform( 0.853451, 0.0915082, 0.182172, 0.43378, 0.420981, -0.2828
 shape = SubResource( 15 )
 
 [node name="forearm_R" type="BoneAttachment" parent="MainRig" index="3"]
-transform = Transform( -0.954615, -0.149206, 0.257776, 0.207805, -0.953669, 0.217556, 0.213372, 0.26125, 0.941392, -0.356491, 1.29081, -0.183764 )
+transform = Transform( -0.949876, -0.15005, 0.274264, 0.210835, -0.955223, 0.207594, 0.230834, 0.255014, 0.93898, -0.355016, 1.29203, -0.182295 )
 bone_name = "forearm_R"
 
 [node name="forearm" type="StaticBody" parent="MainRig/forearm_R" index="0"]
@@ -245,7 +245,7 @@ transform = Transform( 0.527154, -0.8291, 0.0661528, -0.311983, -0.392773, -0.30
 shape = SubResource( 15 )
 
 [node name="forearm_L" type="BoneAttachment" parent="MainRig" index="4"]
-transform = Transform( -0.969915, 0.214152, -0.115765, -0.240324, -0.918141, 0.315058, -0.0388181, 0.333401, 0.941985, 0.157415, 1.34203, -0.141133 )
+transform = Transform( -0.970846, 0.213056, -0.109838, -0.237205, -0.9199, 0.312274, -0.0345085, 0.329225, 0.94362, 0.158033, 1.34219, -0.140695 )
 bone_name = "forearm_L"
 
 [node name="forearm" type="StaticBody" parent="MainRig/forearm_L" index="0"]
@@ -256,7 +256,7 @@ transform = Transform( 0.447928, -0.682757, 0.204955, -0.343168, -0.727482, -0.2
 shape = SubResource( 16 )
 
 [node name="thigh_L" type="BoneAttachment" parent="MainRig" index="5"]
-transform = Transform( 0.8954, 0.167051, -0.412737, 0.122815, -0.983654, -0.131687, -0.427989, 0.0672224, -0.901278, 0.0010675, 1.06785, -0.11 )
+transform = Transform( 0.896042, 0.166204, -0.411684, 0.122018, -0.983766, -0.131588, -0.426872, 0.0676758, -0.901774, 0.00196525, 1.06802, -0.110493 )
 bone_name = "thigh_L"
 
 [node name="thigh" type="StaticBody" parent="MainRig/thigh_L" index="0"]
@@ -267,7 +267,7 @@ transform = Transform( 1, -2.24099e-08, -2.32831e-09, -6.77246e-08, 1, -9.31323e
 shape = SubResource( 17 )
 
 [node name="thigh_R" type="BoneAttachment" parent="MainRig" index="6"]
-transform = Transform( 0.962309, -0.0328043, 0.269973, -0.017666, -0.998142, -0.0583135, 0.271384, 0.0513462, -0.961098, -0.191078, 1.07142, -0.148516 )
+transform = Transform( 0.96209, -0.0334871, 0.270668, -0.0184421, -0.99815, -0.0579384, 0.272107, 0.0507502, -0.960925, -0.19018, 1.0716, -0.149009 )
 bone_name = "thigh_R"
 
 [node name="thigh" type="StaticBody" parent="MainRig/thigh_R" index="0"]
@@ -278,7 +278,7 @@ transform = Transform( 1, -2.24099e-08, -2.32831e-09, -6.77246e-08, 1, -9.31323e
 shape = SubResource( 17 )
 
 [node name="shin_R" type="BoneAttachment" parent="MainRig" index="7"]
-transform = Transform( 0.994285, 0.0384447, 0.0995912, 0.0175259, -0.979029, 0.202959, 0.105306, -0.200053, -0.974108, -0.208658, 0.536519, -0.121 )
+transform = Transform( 0.994221, 0.037741, 0.100496, 0.0166838, -0.979108, 0.202649, 0.106045, -0.1998, -0.97408, -0.208126, 0.536691, -0.121812 )
 bone_name = "shin_R"
 
 [node name="shin" type="StaticBody" parent="MainRig/shin_R" index="0"]
@@ -289,7 +289,7 @@ transform = Transform( 0.165207, -0.986226, -0.00822364, 0.097966, 0.0247046, -0
 shape = SubResource( 18 )
 
 [node name="shin_L" type="BoneAttachment" parent="MainRig" index="8"]
-transform = Transform( 0.943333, 0.165104, -0.287858, 0.138957, -0.984263, -0.109159, -0.30135, 0.0629734, -0.951431, 0.0905901, 0.540707, -0.0739753 )
+transform = Transform( 0.943825, 0.164261, -0.286724, 0.138154, -0.984374, -0.109169, -0.300176, 0.0634244, -0.951772, 0.0910338, 0.540823, -0.0742254 )
 bone_name = "shin_L"
 
 [node name="shin" type="StaticBody" parent="MainRig/shin_L" index="0"]
@@ -300,7 +300,7 @@ transform = Transform( 0.165207, -0.986226, -0.00822364, 0.097966, 0.0247046, -0
 shape = SubResource( 18 )
 
 [node name="foot_R" type="BoneAttachment" parent="MainRig" index="9"]
-transform = Transform( 0.684026, -0.481272, 0.548166, 0.00982822, -0.74532, -0.666631, 0.729393, 0.46138, -0.505087, -0.192361, 0.121508, -0.205802 )
+transform = Transform( 0.683489, -0.482266, 0.547962, 0.0093997, -0.744795, -0.667225, 0.729901, 0.461191, -0.504525, -0.192127, 0.121646, -0.206507 )
 bone_name = "foot_R"
 
 [node name="foot" type="StaticBody" parent="MainRig/foot_R" index="0"]
@@ -311,7 +311,7 @@ transform = Transform( -0.0299073, -0.999555, 0.0004985, 0.56846, -0.0174207, -0
 shape = SubResource( 19 )
 
 [node name="foot_L" type="BoneAttachment" parent="MainRig" index="10"]
-transform = Transform( 0.813777, 0.510133, -0.278443, -0.0274129, -0.444876, -0.895171, -0.58053, 0.736103, -0.348046, 0.160578, 0.123477, -0.0472808 )
+transform = Transform( 0.814498, 0.508846, -0.27869, -0.0281841, -0.445091, -0.89504, -0.579481, 0.736863, -0.348184, 0.160664, 0.123546, -0.0473397 )
 bone_name = "foot_L"
 
 [node name="foot" type="StaticBody" parent="MainRig/foot_L" index="0"]
@@ -322,7 +322,7 @@ transform = Transform( -0.0299073, -0.999555, 0.0004985, 0.56846, -0.0174207, -0
 shape = SubResource( 19 )
 
 [node name="spine3" type="BoneAttachment" parent="MainRig" index="11"]
-transform = Transform( 0.994372, -0.0724407, -0.077301, 0.0775755, 0.994824, 0.0656289, 0.0721467, -0.0712564, 0.994845, -0.097248, 1.4602, -0.0970161 )
+transform = Transform( 0.993002, -0.0688493, -0.0959546, 0.0742723, 0.995767, 0.0541364, 0.0918212, -0.0608845, 0.993912, -0.0960435, 1.46039, -0.0971513 )
 bone_name = "spine3"
 
 [node name="spine3" type="StaticBody" parent="MainRig/spine3" index="0"]
@@ -333,7 +333,7 @@ transform = Transform( 1, 1.06581e-14, 0, -2.13163e-14, 1, -4.47035e-08, 1.7053e
 shape = SubResource( 20 )
 
 [node name="spine1" type="BoneAttachment" parent="MainRig" index="12"]
-transform = Transform( 0.984037, 0.0162372, -0.177224, -0.0479453, 0.983197, -0.176136, 0.171386, 0.181821, 0.968281, -0.0950549, 1.1574, -0.120861 )
+transform = Transform( 0.984037, 0.0162372, -0.177224, -0.0479453, 0.983197, -0.176136, 0.171386, 0.181821, 0.968281, -0.0941571, 1.15757, -0.121354 )
 bone_name = "spine1"
 
 [node name="spine1" type="StaticBody" parent="MainRig/spine1" index="0"]
@@ -343,7 +343,7 @@ transform = Transform( 1, 0, 0, -4.23516e-22, 1, 0, 0, 0, 1, 6.04032e-16, 0.0520
 shape = SubResource( 21 )
 
 [node name="spine2" type="BoneAttachment" parent="MainRig" index="13"]
-transform = Transform( 0.988028, -0.0264537, -0.151989, 0.0272342, 0.999624, 0.00305544, 0.151851, -0.00715828, 0.988377, -0.0928184, 1.29282, -0.0958175 )
+transform = Transform( 0.986484, -0.0246217, -0.162, 0.0251099, 0.999684, 0.000966489, 0.161926, -0.00502142, 0.98679, -0.0919207, 1.29299, -0.0963105 )
 bone_name = "spine2"
 
 [node name="spine2" type="StaticBody" parent="MainRig/spine2" index="0"]
@@ -353,7 +353,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.62125e-10, 0.0788308, -0.00
 shape = SubResource( 22 )
 
 [node name="fullHead" type="BoneAttachment" parent="MainRig" index="14"]
-transform = Transform( 0.992226, 0.0937599, -0.0818348, -0.119805, 0.897618, -0.424179, 0.0336854, 0.430686, 0.901873, -0.112524, 1.66998, -0.112042 )
+transform = Transform( 0.99114, 0.0876104, -0.0998275, -0.122637, 0.892267, -0.434534, 0.0510031, 0.442926, 0.895106, -0.110562, 1.67037, -0.10999 )
 bone_name = "neck"
 
 [node name="fullHead" type="StaticBody" parent="MainRig/fullHead" index="0"]

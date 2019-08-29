@@ -185,7 +185,7 @@ func _grabBones(mouseX:float,mouseY:float):
 
 			
 	if currentShape=="spine3":
-		var scaleLimit:float = 0.203
+		var scaleLimit:float = 0.03
 		if scaleAmountX>=-scaleLimit and scaleAmountX<=scaleLimit:
 			t=t.translated(Vector3(0,scaleAmountX,0))
 			mainRig.set_bone_custom_pose(mainRig.find_bone("shoulder_L"),t)			
