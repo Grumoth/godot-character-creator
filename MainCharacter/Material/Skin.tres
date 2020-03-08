@@ -14,6 +14,7 @@ input_name = "uv"
 
 [sub_resource type="VisualShaderNodeExpression" id=2]
 output_port_for_preview = 0
+size = Vector2( 489, 436 )
 expression = "vec3 mult = uv*vec3(2.0,4.0,0.0)*scale;
 //float xx = x;
 //float yy = y;
@@ -302,8 +303,8 @@ void fragment() {
 	n_out100p0=vec3(0.0, 0.0, 0.0);
 	{
 		vec3 mult = n_out78p0*vec3(2.0,4.0,0.0)*n_out103p0;
-		//float n_out101p0x = n_out101p0;
-		//float n_out102p0y = n_out102p0;
+		//float xx = n_out101p0;
+		//float yy = n_out102p0;
 		n_out100p0 = mult+vec3(n_out101p0,eyeBrowHeight,0.0);
 	}
 // TextureUniform:108

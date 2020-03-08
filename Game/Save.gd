@@ -15,7 +15,6 @@ func _loadCharacter(n):
 	fileSave.open(savePathCharacter+n+ext,File.READ)
 	var charData:Dictionary = parse_json(fileSave.get_line())
 	return charData
-	pass
 
 
 func _savePreset(n:String,data:Dictionary):
@@ -28,5 +27,4 @@ func _loadPreset(n):
 	fileSave.open(savePathPreset+n+ext,File.READ)
 	var charData:Dictionary = parse_json(fileSave.get_line())
 	return charData
-	pass
 

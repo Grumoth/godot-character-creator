@@ -98,253 +98,267 @@ func _input(event):
 [node name="MainCharacter" instance=ExtResource( 2 )]
 script = ExtResource( 1 )
 
-[node name="MainRig" parent="." index="0"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.116389, 0, 0.0396485 )
+[node name="Skeleton" parent="MainRig" index="0"]
+bones/1/bound_children = [ NodePath("spine_1") ]
+bones/2/bound_children = [ NodePath("spine_2") ]
+bones/3/bound_children = [ NodePath("spine_3") ]
+bones/4/bound_children = [ NodePath("fullHead") ]
+bones/5/bound_children = [ NodePath("attachHead") ]
+bones/7/bound_children = [ NodePath("upper_arm_L") ]
+bones/8/bound_children = [ NodePath("forearm_L") ]
+bones/25/bound_children = [ NodePath("upper_arm_R") ]
+bones/26/bound_children = [ NodePath("forearm_R") ]
+bones/42/bound_children = [ NodePath("thigh_L") ]
+bones/43/bound_children = [ NodePath("shin_L") ]
+bones/44/bound_children = [ NodePath("foot_L") ]
+bones/47/bound_children = [ NodePath("thigh_R") ]
+bones/48/bound_children = [ NodePath("shin_R") ]
+bones/49/bound_children = [ NodePath("foot_R") ]
 
-[node name="attachHead" type="BoneAttachment" parent="MainRig" index="0"]
-transform = Transform( 0.998054, -0.0395531, -0.0482084, 0.0348289, 0.994851, -0.0951778, 0.0517248, 0.0933131, 0.994292, -0.114335, 1.7389, -0.0794032 )
+[node name="attachHead" type="BoneAttachment" parent="MainRig/Skeleton" index="0"]
+transform = Transform( 0.999494, -0.0314872, -0.00437428, 0.0307786, 0.992928, -0.114661, 0.00795368, 0.114468, 0.993396, -0.108001, 1.74031, -0.0769312 )
 bone_name = "head"
 
-[node name="nose_tip" type="StaticBody" parent="MainRig/attachHead" index="0"]
+[node name="nose_tip" type="StaticBody" parent="MainRig/Skeleton/attachHead" index="0"]
 transform = Transform( 0.997273, 0.000349594, -0.0737957, 0.00512198, 0.99725, 0.0739419, 0.0736186, -0.0741182, 0.994528, -0.00726943, 0.11264, 0.0568623 )
 
-[node name="CollisionShape" type="CollisionShape" parent="MainRig/attachHead/nose_tip" index="0"]
+[node name="CollisionShape" type="CollisionShape" parent="MainRig/Skeleton/attachHead/nose_tip" index="0"]
 transform = Transform( 1.00586, -0.00914258, -0.00298337, -0.0010732, 1.14945, -0.890583, 0.00456476, 2.28485, 0.448017, 0.00703045, -0.0281767, 0.0756862 )
 shape = SubResource( 1 )
 
-[node name="forehead" type="StaticBody" parent="MainRig/attachHead" index="1"]
+[node name="forehead" type="StaticBody" parent="MainRig/Skeleton/attachHead" index="1"]
 transform = Transform( 0.997273, 0.000349594, -0.0737957, 0.00512198, 0.99725, 0.0739419, 0.0736186, -0.0741182, 0.994528, -0.00726943, 0.11264, 0.0568623 )
 
-[node name="CollisionShape" type="CollisionShape" parent="MainRig/attachHead/forehead" index="0"]
+[node name="CollisionShape" type="CollisionShape" parent="MainRig/Skeleton/attachHead/forehead" index="0"]
 transform = Transform( 1.00586, -0.0111892, -0.00160611, -0.0010732, 0.311141, -0.989523, 0.00456485, 2.53868, 0.121269, 0.00716671, 0.0240051, 0.0579246 )
 shape = SubResource( 2 )
 
-[node name="forehead_top" type="StaticBody" parent="MainRig/attachHead" index="2"]
+[node name="forehead_top" type="StaticBody" parent="MainRig/Skeleton/attachHead" index="2"]
 transform = Transform( 0.997273, 0.000349594, -0.0737957, 0.00512198, 0.99725, 0.0739419, 0.0736186, -0.0741182, 0.994528, -0.00726943, 0.11264, 0.0568623 )
 
-[node name="CollisionShape" type="CollisionShape" parent="MainRig/attachHead/forehead_top" index="0"]
+[node name="CollisionShape" type="CollisionShape" parent="MainRig/Skeleton/attachHead/forehead_top" index="0"]
 transform = Transform( 1.00586, -0.0111893, -0.00160611, -0.00107319, 0.311141, -0.989523, 0.00456493, 2.53868, 0.121269, 0.00685602, 0.0673598, 0.0514053 )
 shape = SubResource( 3 )
 
-[node name="forehead_side" type="StaticBody" parent="MainRig/attachHead" index="3"]
+[node name="forehead_side" type="StaticBody" parent="MainRig/Skeleton/attachHead" index="3"]
 transform = Transform( 0.997273, 0.000349594, -0.0737957, 0.00512198, 0.99725, 0.0739419, 0.0736186, -0.0741182, 0.994528, -0.00726943, 0.11264, 0.0568623 )
 
-[node name="CollisionShape" type="CollisionShape" parent="MainRig/attachHead/forehead_side" index="0"]
+[node name="CollisionShape" type="CollisionShape" parent="MainRig/Skeleton/attachHead/forehead_side" index="0"]
 transform = Transform( 1.00586, -0.0111893, -0.00160611, -0.00107318, 0.311141, -0.989523, 0.00456492, 2.53868, 0.121269, 0.00732267, 0.0364027, 0.0264746 )
 shape = SubResource( 4 )
 
-[node name="nose_middle" type="StaticBody" parent="MainRig/attachHead" index="4"]
+[node name="nose_middle" type="StaticBody" parent="MainRig/Skeleton/attachHead" index="4"]
 transform = Transform( 0.997273, 0.000349594, -0.0737957, 0.00512198, 0.99725, 0.0739419, 0.0736186, -0.0741182, 0.994528, -0.00726943, 0.11264, 0.0568623 )
 
-[node name="CollisionShape" type="CollisionShape" parent="MainRig/attachHead/nose_middle" index="0"]
+[node name="CollisionShape" type="CollisionShape" parent="MainRig/Skeleton/attachHead/nose_middle" index="0"]
 transform = Transform( 1.00586, -0.00914264, -0.00298338, -0.0010732, 1.14945, -0.890582, 0.00456479, 2.28485, 0.448017, 0.00710668, -0.00449955, 0.0644525 )
 shape = SubResource( 5 )
 
-[node name="cheek" type="StaticBody" parent="MainRig/attachHead" index="5"]
+[node name="cheek" type="StaticBody" parent="MainRig/Skeleton/attachHead" index="5"]
 transform = Transform( 1, 3.55271e-15, 0, 0, 1, 1.49012e-08, 0, 0, 0.999999, 0, 0.0985429, 0.101017 )
 
-[node name="CollisionShape" type="CollisionShape" parent="MainRig/attachHead/cheek" index="0"]
+[node name="CollisionShape" type="CollisionShape" parent="MainRig/Skeleton/attachHead/cheek" index="0"]
 transform = Transform( 1, 0, 1.77636e-14, 0, 0.2632, -0.964741, 0, 0.964742, 0.2632, 1.39698e-09, 0.00344098, 0.00195263 )
 shape = SubResource( 6 )
 
-[node name="chin" type="StaticBody" parent="MainRig/attachHead" index="6"]
+[node name="chin" type="StaticBody" parent="MainRig/Skeleton/attachHead" index="6"]
 transform = Transform( 1, 3.55271e-15, 0, 0, 1, 1.49012e-08, 0, 0, 0.999999, 0, 0, 0 )
 
-[node name="CollisionShape" type="CollisionShape" parent="MainRig/attachHead/chin" index="0"]
+[node name="CollisionShape" type="CollisionShape" parent="MainRig/Skeleton/attachHead/chin" index="0"]
 transform = Transform( 1, 7.10543e-14, 7.4607e-14, 0, 0.2632, -0.964741, 0, 0.964742, 0.2632, -2.32831e-09, 0.0137913, 0.126899 )
 shape = SubResource( 7 )
 
-[node name="mouth" type="StaticBody" parent="MainRig/attachHead" index="7"]
+[node name="mouth" type="StaticBody" parent="MainRig/Skeleton/attachHead" index="7"]
 transform = Transform( 1, 3.55271e-15, 0, 0, 1, 1.49012e-08, 0, 0, 0.999999, 0, 0, 0 )
 
-[node name="CollisionShape" type="CollisionShape" parent="MainRig/attachHead/mouth" index="0"]
+[node name="CollisionShape" type="CollisionShape" parent="MainRig/Skeleton/attachHead/mouth" index="0"]
 transform = Transform( 1, 7.10543e-14, 7.4607e-14, 0, 0.2632, -0.964741, 0, 0.964742, 0.2632, -0.00487548, 0.0542034, 0.124311 )
 shape = SubResource( 8 )
 
-[node name="mouth_side" type="StaticBody" parent="MainRig/attachHead" index="8"]
+[node name="mouth_side" type="StaticBody" parent="MainRig/Skeleton/attachHead" index="8"]
 transform = Transform( 1, 3.55271e-15, 0, 0, 1, 1.49012e-08, 0, 0, 0.999999, 0, 0, 0 )
 
-[node name="CollisionShape" type="CollisionShape" parent="MainRig/attachHead/mouth_side" index="0"]
+[node name="CollisionShape" type="CollisionShape" parent="MainRig/Skeleton/attachHead/mouth_side" index="0"]
 transform = Transform( 1, 7.10543e-14, 7.4607e-14, 0, 0.2632, -0.964741, 0, 0.964742, 0.2632, -0.00487548, 0.0525439, 0.118228 )
 shape = SubResource( 9 )
 
-[node name="jaw" type="StaticBody" parent="MainRig/attachHead" index="9"]
+[node name="jaw" type="StaticBody" parent="MainRig/Skeleton/attachHead" index="9"]
 transform = Transform( 1, 3.55271e-15, 0, 0, 1, 1.49012e-08, 0, 0, 0.999999, 0, 0, 0 )
 
-[node name="CollisionShape" type="CollisionShape" parent="MainRig/attachHead/jaw" index="0"]
+[node name="CollisionShape" type="CollisionShape" parent="MainRig/Skeleton/attachHead/jaw" index="0"]
 transform = Transform( 1, -4.26326e-14, 4.26326e-14, 0, -0.47234, -0.881416, 0, 0.881417, -0.472339, -0.00487548, 0.0412941, 0.0609957 )
 shape = SubResource( 10 )
 
-[node name="ears" type="StaticBody" parent="MainRig/attachHead" index="10"]
+[node name="ears" type="StaticBody" parent="MainRig/Skeleton/attachHead" index="10"]
 transform = Transform( 1, 3.55271e-15, 0, 0, 1, 1.49012e-08, 0, 0, 0.999999, 0, 0, 0 )
 
-[node name="CollisionShape" type="CollisionShape" parent="MainRig/attachHead/ears" index="0"]
+[node name="CollisionShape" type="CollisionShape" parent="MainRig/Skeleton/attachHead/ears" index="0"]
 transform = Transform( 1, -8.88178e-15, 0, 0, -0.997788, -0.066481, 0, 0.0664811, -0.997787, -0.00487547, 0.0979023, 0.00500514 )
 shape = SubResource( 11 )
 
-[node name="eyes" type="StaticBody" parent="MainRig/attachHead" index="11"]
+[node name="eyes" type="StaticBody" parent="MainRig/Skeleton/attachHead" index="11"]
 transform = Transform( 1, 3.55271e-15, 0, 0, 1, 1.49012e-08, 0, 0, 0.999999, 0, 0, 0 )
 
-[node name="CollisionShape" type="CollisionShape" parent="MainRig/attachHead/eyes" index="0"]
+[node name="CollisionShape" type="CollisionShape" parent="MainRig/Skeleton/attachHead/eyes" index="0"]
 transform = Transform( 1, -2.66454e-14, 0, 0, -0.997788, -0.066481, 0, 0.0664811, -0.997787, -0.00487547, 0.126675, 0.0818985 )
 shape = SubResource( 12 )
 
-[node name="head_shape" type="StaticBody" parent="MainRig/attachHead" index="12"]
+[node name="head_shape" type="StaticBody" parent="MainRig/Skeleton/attachHead" index="12"]
 transform = Transform( 1, 0, -1.42109e-14, -3.55271e-15, 1, 1.49012e-08, 0, 1.49012e-08, 0.999999, 0, 0, 0 )
 
-[node name="CollisionShape" type="CollisionShape" parent="MainRig/attachHead/head_shape" index="0"]
+[node name="CollisionShape" type="CollisionShape" parent="MainRig/Skeleton/attachHead/head_shape" index="0"]
 transform = Transform( 1, -5.32907e-15, 0, 0, -0.997788, -0.066481, 0, 0.0664811, -0.997787, -0.00487547, 0.159426, -0.00867783 )
 shape = SubResource( 13 )
 
-[node name="upper_arm_R" type="BoneAttachment" parent="MainRig" index="1"]
-transform = Transform( -0.974745, -0.2001, 0.0991563, 0.189439, -0.976006, -0.107348, 0.118258, -0.0858528, 0.989264, -0.309094, 1.54757, -0.149065 )
-bone_name = "upper_arm_R"
+[node name="upper_arm_R" type="BoneAttachment" parent="MainRig/Skeleton" index="1"]
+transform = Transform( -0.968025, -0.202356, 0.148254, 0.188788, -0.976847, -0.100637, 0.165186, -0.0694302, 0.983816, -0.303402, 1.55325, -0.155789 )
+bone_name = "upper_arm_r"
 
-[node name="upper" type="StaticBody" parent="MainRig/upper_arm_R" index="0"]
+[node name="upper" type="StaticBody" parent="MainRig/Skeleton/upper_arm_R" index="0"]
 transform = Transform( -0.767965, -0.586039, 0.258433, 0.640483, -0.700679, 0.314373, -0.00315609, 0.406951, 0.913444, -0.0124862, -0.334602, 0.149692 )
 
-[node name="CollisionShape" type="CollisionShape" parent="MainRig/upper_arm_R/upper" index="0"]
+[node name="CollisionShape" type="CollisionShape" parent="MainRig/Skeleton/upper_arm_R/upper" index="0"]
 transform = Transform( 0.6131, 0.0915081, -0.278608, -0.737934, 0.420981, -0.187283, 0.282069, 0.902446, 0.115616, 0.307419, -0.400151, 0.0281646 )
 shape = SubResource( 14 )
 
-[node name="upper_arm_L" type="BoneAttachment" parent="MainRig" index="2"]
-transform = Transform( -0.976609, 0.214646, -0.0126964, -0.212353, -0.97208, -0.0998275, -0.0337697, -0.0947962, 0.994923, 0.0940949, 1.60755, -0.116752 )
-bone_name = "upper_arm_L"
+[node name="upper_arm_L" type="BoneAttachment" parent="MainRig/Skeleton" index="2"]
+transform = Transform( -0.979647, 0.200728, 0.000362854, -0.19893, -0.970627, -0.135313, -0.0268089, -0.132631, 0.990803, 0.0996363, 1.60733, -0.112914 )
+bone_name = "upper_arm_l"
 
-[node name="upper" type="StaticBody" parent="MainRig/upper_arm_L" index="0"]
+[node name="upper" type="StaticBody" parent="MainRig/Skeleton/upper_arm_L" index="0"]
 transform = Transform( 0.492201, -0.796476, 0.351232, 0.87047, 0.452339, -0.194089, -0.00428925, 0.40127, 0.915949, -0.0103523, -0.315554, 0.149598 )
 
-[node name="CollisionShape" type="CollisionShape" parent="MainRig/upper_arm_L/upper" index="0"]
+[node name="CollisionShape" type="CollisionShape" parent="MainRig/Skeleton/upper_arm_L/upper" index="0"]
 transform = Transform( 0.853451, 0.0915082, 0.182172, 0.43378, 0.420981, -0.282846, -0.288894, 0.902447, 0.113472, 0.410682, 0.14131, -0.227492 )
 shape = SubResource( 15 )
 
-[node name="forearm_R" type="BoneAttachment" parent="MainRig" index="3"]
-transform = Transform( -0.965467, -0.174497, 0.193456, 0.217645, -0.948352, 0.230776, 0.143195, 0.264911, 0.953581, -0.363514, 1.28213, -0.172414 )
-bone_name = "forearm_R"
+[node name="forearm_R" type="BoneAttachment" parent="MainRig/Skeleton" index="3"]
+transform = Transform( -0.958008, -0.163891, 0.235287, 0.214613, -0.954008, 0.209308, 0.190162, 0.251015, 0.94912, -0.358435, 1.28759, -0.174671 )
+bone_name = "forearm_r"
 
-[node name="forearm" type="StaticBody" parent="MainRig/forearm_R" index="0"]
+[node name="forearm" type="StaticBody" parent="MainRig/Skeleton/forearm_R" index="0"]
 transform = Transform( -0.804043, -0.541281, 0.246023, 0.457606, -0.299175, 0.83731, -0.379616, 0.785818, 0.488244, 0.0239874, -0.369048, 0.503698 )
 
-[node name="CollisionShape" type="CollisionShape" parent="MainRig/forearm_R/forearm" index="0"]
+[node name="CollisionShape" type="CollisionShape" parent="MainRig/Skeleton/forearm_R/forearm" index="0"]
 transform = Transform( 0.527154, -0.8291, 0.0661528, -0.311983, -0.392773, -0.307159, 0.790433, 0.397915, -0.165354, 0.443898, -0.554337, 0.173929 )
 shape = SubResource( 15 )
 
-[node name="forearm_L" type="BoneAttachment" parent="MainRig" index="4"]
-transform = Transform( -0.966952, 0.214399, -0.137975, -0.248604, -0.91293, 0.323658, -0.0565702, 0.347263, 0.936059, 0.152471, 1.34318, -0.142533 )
-bone_name = "forearm_L"
+[node name="forearm_L" type="BoneAttachment" parent="MainRig/Skeleton" index="4"]
+transform = Transform( -0.970092, 0.206302, -0.127914, -0.23755, -0.91523, 0.325462, -0.0499269, 0.346115, 0.936863, 0.154227, 1.34336, -0.148985 )
+bone_name = "forearm_l"
 
-[node name="forearm" type="StaticBody" parent="MainRig/forearm_L" index="0"]
+[node name="forearm" type="StaticBody" parent="MainRig/Skeleton/forearm_L" index="0"]
 transform = Transform( -0.804043, -0.541281, 0.246023, 0.457606, -0.299175, 0.83731, -0.379616, 0.785818, 0.488244, 0.0239874, -0.369048, 0.503698 )
 
-[node name="CollisionShape" type="CollisionShape" parent="MainRig/forearm_L/forearm" index="0"]
+[node name="CollisionShape" type="CollisionShape" parent="MainRig/Skeleton/forearm_L/forearm" index="0"]
 transform = Transform( 0.447928, -0.682757, 0.204955, -0.343168, -0.727482, -0.210957, 0.825594, 0.0680441, -0.198886, 0.455199, -0.55391, 0.197508 )
 shape = SubResource( 16 )
 
-[node name="thigh_L" type="BoneAttachment" parent="MainRig" index="5"]
-transform = Transform( 0.892188, 0.169485, -0.418658, 0.126763, -0.983631, -0.128062, -0.43351, 0.0611857, -0.899067, -0.00117617, 1.06541, -0.103179 )
-bone_name = "thigh_L"
+[node name="thigh_L" type="BoneAttachment" parent="MainRig/Skeleton" index="5"]
+transform = Transform( 0.894502, 0.16747, -0.414511, 0.123926, -0.983737, -0.130018, -0.429544, 0.0649326, -0.900706, 0.000811964, 1.06699, -0.107593 )
+bone_name = "thigh_l"
 
-[node name="thigh" type="StaticBody" parent="MainRig/thigh_L" index="0"]
+[node name="thigh" type="StaticBody" parent="MainRig/Skeleton/thigh_L" index="0"]
 transform = Transform( 0.999998, 0, 0, 0, 1, 0, 0, 0, 0.999999, 0, 0, 0 )
 
-[node name="CollisionShape" type="CollisionShape" parent="MainRig/thigh_L/thigh" index="0"]
+[node name="CollisionShape" type="CollisionShape" parent="MainRig/Skeleton/thigh_L/thigh" index="0"]
 transform = Transform( 1, -2.24099e-08, -2.32831e-09, -6.77246e-08, 1, -9.31323e-09, -3.25963e-09, -1.49012e-08, 1, 0.017344, 0.222048, -0.0117421 )
 shape = SubResource( 17 )
 
-[node name="thigh_R" type="BoneAttachment" parent="MainRig" index="6"]
-transform = Transform( 0.962395, -0.0339836, 0.269518, -0.0173582, -0.99781, -0.0638314, 0.271097, 0.0567526, -0.960875, -0.193321, 1.06898, -0.141695 )
-bone_name = "thigh_R"
+[node name="thigh_R" type="BoneAttachment" parent="MainRig/Skeleton" index="6"]
+transform = Transform( 0.962176, -0.0339333, 0.270308, -0.0181398, -0.997991, -0.0607136, 0.271825, 0.0535141, -0.960856, -0.191333, 1.07056, -0.146109 )
+bone_name = "thigh_r"
 
-[node name="thigh" type="StaticBody" parent="MainRig/thigh_R" index="0"]
+[node name="thigh" type="StaticBody" parent="MainRig/Skeleton/thigh_R" index="0"]
 transform = Transform( 0.999998, 0, 0, 0, 1, 0, 0, 0, 0.999999, 0, 0, 0 )
 
-[node name="CollisionShape" type="CollisionShape" parent="MainRig/thigh_R/thigh" index="0"]
+[node name="CollisionShape" type="CollisionShape" parent="MainRig/Skeleton/thigh_R/thigh" index="0"]
 transform = Transform( 1, -2.24099e-08, -2.32831e-09, -6.77246e-08, 1, -9.31323e-09, -3.25963e-09, -1.49012e-08, 1, 0.017344, 0.222048, -0.0117421 )
 shape = SubResource( 17 )
 
-[node name="shin_R" type="BoneAttachment" parent="MainRig" index="7"]
-transform = Transform( 0.994119, 0.0457761, 0.0981382, 0.0222757, -0.973322, 0.228356, 0.105974, -0.224826, -0.968617, -0.211533, 0.534258, -0.111281 )
-bone_name = "shin_R"
+[node name="shin_R" type="BoneAttachment" parent="MainRig/Skeleton" index="7"]
+transform = Transform( 0.994165, 0.0412577, 0.099673, 0.0190366, -0.976568, 0.214359, 0.106182, -0.211209, -0.971656, -0.209518, 0.53574, -0.117431 )
+bone_name = "shin_r"
 
-[node name="shin" type="StaticBody" parent="MainRig/shin_R" index="0"]
+[node name="shin" type="StaticBody" parent="MainRig/Skeleton/shin_R" index="0"]
 transform = Transform( 0.999998, 0, 0, 0, 1, 0, 0, 0, 0.999999, 0, 0, 0 )
 
-[node name="CollisionShape" type="CollisionShape" parent="MainRig/shin_R/shin" index="0"]
+[node name="CollisionShape" type="CollisionShape" parent="MainRig/Skeleton/shin_R/shin" index="0"]
 transform = Transform( 0.165207, -0.986226, -0.00822364, 0.097966, 0.0247046, -0.994882, 0.981382, 0.163557, 0.1007, -0.0122064, 0.210806, 0.00333779 )
 shape = SubResource( 18 )
 
-[node name="shin_L" type="BoneAttachment" parent="MainRig" index="8"]
-transform = Transform( 0.940958, 0.167509, -0.294172, 0.142376, -0.984223, -0.105031, -0.307124, 0.0569472, -0.949963, 0.0896506, 0.53828, -0.0703893 )
-bone_name = "shin_L"
+[node name="shin_L" type="BoneAttachment" parent="MainRig/Skeleton" index="8"]
+transform = Transform( 0.942685, 0.165514, -0.289739, 0.139831, -0.984337, -0.107354, -0.30297, 0.0606863, -0.951065, 0.0905588, 0.539802, -0.0727954 )
+bone_name = "shin_l"
 
-[node name="shin" type="StaticBody" parent="MainRig/shin_L" index="0"]
+[node name="shin" type="StaticBody" parent="MainRig/Skeleton/shin_L" index="0"]
 transform = Transform( 0.999998, 0, 0, 0, 1, 0, 0, 0, 0.999999, 0, 0, 0 )
 
-[node name="CollisionShape" type="CollisionShape" parent="MainRig/shin_L/shin" index="0"]
+[node name="CollisionShape" type="CollisionShape" parent="MainRig/Skeleton/shin_L/shin" index="0"]
 transform = Transform( 0.165207, -0.986226, -0.00822364, 0.097966, 0.0247046, -0.994882, 0.981382, 0.163557, 0.1007, -0.0122064, 0.210806, 0.00333779 )
 shape = SubResource( 18 )
 
-[node name="foot_R" type="BoneAttachment" parent="MainRig" index="9"]
-transform = Transform( 0.683883, -0.475719, 0.553169, -0.00357763, -0.760365, -0.649482, 0.729584, 0.442191, -0.521702, -0.192129, 0.121666, -0.206585 )
-bone_name = "foot_R"
+[node name="foot_R" type="BoneAttachment" parent="MainRig/Skeleton" index="9"]
+transform = Transform( 0.683518, -0.479531, 0.550321, 0.00335386, -0.751861, -0.659311, 0.729928, 0.452497, -0.5123, -0.192029, 0.121771, -0.206962 )
+bone_name = "foot_r"
 
-[node name="foot" type="StaticBody" parent="MainRig/foot_R" index="0"]
+[node name="foot" type="StaticBody" parent="MainRig/Skeleton/foot_R" index="0"]
 transform = Transform( 0.999998, 0, 0, 0, 1, 0, 0, 0, 0.999999, 0, 0, 0 )
 
-[node name="CollisionShape" type="CollisionShape" parent="MainRig/foot_R/foot" index="0"]
+[node name="CollisionShape" type="CollisionShape" parent="MainRig/Skeleton/foot_R/foot" index="0"]
 transform = Transform( -0.0299073, -0.999555, 0.0004985, 0.56846, -0.0174207, -0.822526, 0.822169, -0.024314, 0.568727, -0.00278719, 0.114151, -0.0108158 )
 shape = SubResource( 19 )
 
-[node name="foot_L" type="BoneAttachment" parent="MainRig" index="10"]
-transform = Transform( 0.80982, 0.516074, -0.279031, -0.0228738, -0.447475, -0.894002, -0.586231, 0.730364, -0.35057, 0.160658, 0.121067, -0.0462493 )
-bone_name = "foot_L"
+[node name="foot_L" type="BoneAttachment" parent="MainRig/Skeleton" index="10"]
+transform = Transform( 0.812615, 0.511741, -0.278885, -0.0260221, -0.446188, -0.894559, -0.582219, 0.73419, -0.349263, 0.16072, 0.122541, -0.0470704 )
+bone_name = "foot_l"
 
-[node name="foot" type="StaticBody" parent="MainRig/foot_L" index="0"]
+[node name="foot" type="StaticBody" parent="MainRig/Skeleton/foot_L" index="0"]
 transform = Transform( 0.999998, 0, 0, 0, 1, 0, 0, 0, 0.999999, 0, 0, 0 )
 
-[node name="CollisionShape" type="CollisionShape" parent="MainRig/foot_L/foot" index="0"]
+[node name="CollisionShape" type="CollisionShape" parent="MainRig/Skeleton/foot_L/foot" index="0"]
 transform = Transform( -0.0299073, -0.999555, 0.0004985, 0.56846, -0.0174207, -0.822526, 0.822169, -0.024314, 0.568727, -0.00278719, 0.114151, -0.0108158 )
 shape = SubResource( 19 )
 
-[node name="spine3" type="BoneAttachment" parent="MainRig" index="11"]
-transform = Transform( 0.993836, -0.0933737, -0.0597697, 0.0988036, 0.990516, 0.0954714, 0.0502883, -0.100789, 0.993636, -0.101316, 1.45771, -0.0899052 )
-bone_name = "spine3"
+[node name="spine_3" type="BoneAttachment" parent="MainRig/Skeleton" index="11"]
+transform = Transform( 0.993545, -0.0791769, -0.0812328, 0.0850221, 0.993831, 0.0712128, 0.0750932, -0.0776599, 0.994148, -0.0981174, 1.45933, -0.0942796 )
+bone_name = "spine_3"
 
-[node name="spine3" type="StaticBody" parent="MainRig/spine3" index="0"]
+[node name="spine_3" type="StaticBody" parent="MainRig/Skeleton/spine_3" index="0"]
 transform = Transform( 1, 0, 1.42109e-14, -7.10543e-15, 1, 0, 5.68434e-14, 0, 1, 5.45374e-09, 0.17626, 0.0228746 )
 
-[node name="CollisionShape" type="CollisionShape" parent="MainRig/spine3/spine3" index="0"]
+[node name="CollisionShape" type="CollisionShape" parent="MainRig/Skeleton/spine_3/spine_3" index="0"]
 transform = Transform( 1, 1.06581e-14, 0, -2.13163e-14, 1, -4.47035e-08, 1.7053e-13, 4.47035e-08, 1, -1.82872e-08, -0.0851667, -0.0272159 )
 shape = SubResource( 20 )
 
-[node name="spine1" type="BoneAttachment" parent="MainRig" index="12"]
-transform = Transform( 0.984037, 0.0162372, -0.177224, -0.0479453, 0.983197, -0.176136, 0.171386, 0.181821, 0.968281, -0.0972985, 1.15496, -0.11404 )
-bone_name = "spine1"
+[node name="spine_1" type="BoneAttachment" parent="MainRig/Skeleton" index="12"]
+transform = Transform( 0.984037, 0.0162372, -0.177224, -0.0479453, 0.983198, -0.176136, 0.171386, 0.181821, 0.968281, -0.0953104, 1.15654, -0.118454 )
+bone_name = "spine_1"
 
-[node name="spine1" type="StaticBody" parent="MainRig/spine1" index="0"]
+[node name="spine_1" type="StaticBody" parent="MainRig/Skeleton/spine_1" index="0"]
 
-[node name="CollisionShape" type="CollisionShape" parent="MainRig/spine1/spine1" index="0"]
+[node name="CollisionShape" type="CollisionShape" parent="MainRig/Skeleton/spine_1/spine_1" index="0"]
 transform = Transform( 1, 0, 0, -4.23516e-22, 1, 0, 0, 0, 1, 6.04032e-16, 0.0520034, -0.0143324 )
 shape = SubResource( 21 )
 
-[node name="spine2" type="BoneAttachment" parent="MainRig" index="13"]
-transform = Transform( 0.989066, -0.0373514, -0.142663, 0.0377436, 0.999287, 4.30346e-05, 0.14256, -0.00542736, 0.989771, -0.0950621, 1.29038, -0.0889964 )
-bone_name = "spine2"
+[node name="spine_2" type="BoneAttachment" parent="MainRig/Skeleton" index="13"]
+transform = Transform( 0.987612, -0.0301194, -0.153998, 0.0305593, 0.999533, 0.000489846, 0.153912, -0.00519001, 0.988071, -0.093074, 1.29196, -0.0934105 )
+bone_name = "spine_2"
 
-[node name="spine2" type="StaticBody" parent="MainRig/spine2" index="0"]
+[node name="spine_2" type="StaticBody" parent="MainRig/Skeleton/spine_2" index="0"]
 
-[node name="CollisionShape" type="CollisionShape" parent="MainRig/spine2/spine2" index="0"]
+[node name="CollisionShape" type="CollisionShape" parent="MainRig/Skeleton/spine_2/spine_2" index="0"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.62125e-10, 0.0788308, -0.00591374 )
 shape = SubResource( 22 )
 
-[node name="fullHead" type="BoneAttachment" parent="MainRig" index="14"]
-transform = Transform( 0.994854, 0.0841651, -0.0564014, -0.0996959, 0.912378, -0.397022, 0.0180441, 0.400601, 0.916075, -0.121006, 1.66658, -0.111159 )
+[node name="fullHead" type="BoneAttachment" parent="MainRig/Skeleton" index="14"]
+transform = Transform( 0.992919, 0.0859489, -0.0820017, -0.112602, 0.900894, -0.419179, 0.0378468, 0.425444, 0.904193, -0.114814, 1.6689, -0.110656 )
 bone_name = "neck"
 
-[node name="fullHead" type="StaticBody" parent="MainRig/fullHead" index="0"]
+[node name="fullHead" type="StaticBody" parent="MainRig/Skeleton/fullHead" index="0"]
 transform = Transform( 0.99676, -0.0669551, 0.0445777, 0.0662775, 0.997665, 0.0165118, -0.0455792, -0.0135036, 0.998869, -0.00347762, -0.00175285, 0.000184536 )
 
-[node name="CollisionShape" type="CollisionShape" parent="MainRig/fullHead/fullHead" index="0"]
+[node name="CollisionShape" type="CollisionShape" parent="MainRig/Skeleton/fullHead/fullHead" index="0"]
 transform = Transform( 0.99879, -0.0452682, -0.0192165, 0.049175, 0.923702, 0.379945, 0.000550913, -0.38043, 0.92481, 0.00368766, 0.0125387, -0.00955909 )
 shape = SubResource( 23 )
 
@@ -361,13 +375,13 @@ autostart = true
 [node name="blinkAnim" type="Timer" parent="." index="4"]
 wait_time = 0.01
 
-[node name="headGrab" type="MeshInstance" parent="." index="6"]
+[node name="headGrab" type="MeshInstance" parent="." index="5"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.81041, -0.302412 )
 visible = false
 mesh = SubResource( 25 )
 material/0 = SubResource( 26 )
 
-[node name="faceViewport" type="Viewport" parent="." index="7"]
+[node name="faceViewport" type="Viewport" parent="." index="6"]
 size = Vector2( 64, 64 )
 msaa = 4
 render_target_v_flip = true
@@ -376,7 +390,7 @@ render_target_v_flip = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000900328, 1.85833, 0.56002 )
 fov = 35.0
 
-[node name="camTarget" type="Spatial" parent="." index="8"]
+[node name="camTarget" type="Spatial" parent="." index="7"]
 
 [node name="Camera" type="Camera" parent="camTarget" index="0"]
 transform = Transform( -1, 3.55271e-15, -8.74228e-08, -3.3475e-08, 0.923786, 0.382909, 8.07599e-08, 0.382909, -0.923786, 0, 2.42, -2.65562 )

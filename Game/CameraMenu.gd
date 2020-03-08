@@ -9,7 +9,7 @@ func _ready():
 		_setZoomTarget()
 		
 func _setZoomTarget():
-	var y =character.get_node("MainRig/attachHead").transform.origin +zoomOffset
+	var y =character.get_node("MainRig/Skeleton/attachHead").transform.origin +zoomOffset
 	zoomTarget=Vector3(0,y.y,y.z)
 	
 func _input(event):

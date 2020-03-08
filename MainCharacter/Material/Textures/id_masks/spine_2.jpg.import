@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/spine2.jpg-81309ac70588f7d159115dac808c2611.stex"
+path="res://.import/spine_2.jpg-f46fd5ad4bc19afa7020ff384785df67.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://MainCharacter/Material/Textures/id_masks/spine2.jpg"
-dest_files=[ "res://.import/spine2.jpg-81309ac70588f7d159115dac808c2611.stex" ]
+source_file="res://MainCharacter/Material/Textures/id_masks/spine_2.jpg"
+dest_files=[ "res://.import/spine_2.jpg-f46fd5ad4bc19afa7020ff384785df67.stex" ]
 
 [params]
 

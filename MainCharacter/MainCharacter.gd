@@ -1,9 +1,9 @@
-tool
 extends Spatial
+tool
 
-onready var sk:Skeleton = get_node("MainRig")
+onready var sk:Skeleton = $MainRig/Skeleton
 var parts:Array = ["head","torso","arms","legs"]
-var bonesMod:Array = ["spine3","spine2","spine1","thigh_L","thigh_R","shin_L","forearm_L","forearm_R","shin_R","upper_arm_L","upper_arm_R","foot_L","foot_R","shoulder_L","shoulder_R"]
+var bonesMod:Array = ["spine_3","spine_2","spine_1","thigh_l","thigh_r","shin_l","forearm_l","forearm_r","shin_r","upper_arm_l","upper_arm_r","foot_l","foot_r","shoulder_l","shoulder_r"]
 
 onready var faceCam:Camera ;onready var faceViewport:Viewport
 
@@ -35,8 +35,9 @@ var preset:Dictionary={
 }
 func _ready():
 #	if not Engine.editor_hint:	
-	$AnimationPlayer.play("idle")
 	$AnimationPlayer.get_animation("idle").loop=true
+	$AnimationPlayer.play("idle")
+#	$AnimationPlayer.play("idle2")
 	_generate()
 	$MouseTarget.set_as_toplevel(true)
 	faceCam=$faceViewport/faceCam
@@ -44,7 +45,7 @@ func _ready():
 
 
 func _generate():
-	$MainRig/dummy.queue_free()
+	$MainRig/Skeleton/dummy.queue_free()
 	for p in parts:
 		var scenePart:Spatial = ResourceLoader.load("res://MainCharacter/Mesh/Parts/"+p+".glb").instance()
 		var mesh:MeshInstance = scenePart.get_child(0).get_child(0).duplicate()
@@ -53,8 +54,8 @@ func _generate():
 		var mat:ShaderMaterial = matSkin.duplicate()
 		mesh.set_surface_material(0,mat)
 		#----------------------MESH RENAME BECAUSE IT WAS IMPOSSIBLE TO IMPORT IT AS "HEAD"
-		if mesh.name=="head 2":
-			mesh.name="head"
+		if mesh.name=="head":
+#			mesh.name="head"
 			headMat=mat
 			mat.set_shader_param("hairMask",ResourceLoader.load("res://MainCharacter/Material/Textures/subHair/subHair1_mask.jpg"))
 		else:
@@ -83,14 +84,13 @@ func _generate():
 			mesh.set_surface_material(2,matCornea)
 		if p =="legs":
 			mesh.set_surface_material(1,matUnderwear)
-		$MainRig.add_child(mesh)
+		sk.add_child(mesh)
 	#--HAIR
-	head=$MainRig.get_node("head")
+	head=sk.get_node("head")
 	arrayMat=[headMat,torsoMat,armsMat,legsMat]
 
-
 func _setMaterialParameter(param:String,part:String,col):
-	var mat:Material
+	var mat:ShaderMaterial
 	if part=="eyes":
 		mat=matEye
 	elif part=="hair":
@@ -100,9 +100,9 @@ func _setMaterialParameter(param:String,part:String,col):
 	else:
 		mat=headMat
 	mat.set_shader_param(param,col)
-
+	
 func _setParameterTexture(v,part,prop):
-	var mat = $MainRig.get_node(part).get_surface_material(0)
+	var mat = sk.get_node(part).get_surface_material(0)
 	mat.set_shader_param(prop,ResourceLoader.load("res://MainCharacter/Material/Textures/"+prop+"/"+prop+str(v)+"_mask.jpg"))
 
 func _setChubbiness(v):
@@ -124,12 +124,12 @@ func _setChubbiness(v):
 
 func _setBlendShape(part:String,prop:String,v:float):
 	yield(get_tree(),"idle_frame") 
-	var n = $MainRig.find_node(part+"?",true,false)
+	var n = sk.find_node(part+"?",true,false)
 	n.set("blend_shapes/"+prop,v)
 
 
 func _setMesh(part,v):
-	var n = $MainRig.find_node(part+"?",true,false)
+	var n = sk.find_node(part+"?",true,false)
 	if n:
 		n.queue_free()
 		yield(n,"tree_exited")
@@ -156,7 +156,7 @@ func _setMesh(part,v):
 				beardMat=matHair.duplicate()
 			mesh.set_surface_material(0,beardMat)	
 
-	$MainRig.add_child(mesh)
+	sk.add_child(mesh)
 	_matchBlendShapes(mesh)
 	
 func _matchBlendShapes(mesh):
@@ -170,6 +170,7 @@ func _setSkinColor(c):
 	var sum = c[0]+c[1]+c[2]
 	var roughTweak = range_lerp(sum,0,3,1,0.5)
 	for mat in arrayMat:
+		print(mat)
 		mat.set_shader_param("skinTone",c)
 		mat.set_shader_param("rPunch",roughTweak)	
 
@@ -200,7 +201,7 @@ func _setBone(b:String,data):
 	var bone = sk.find_bone(b)
 	t=t.translated(Vector3(0,data.bonesY[b],0))
 	sk.set_bone_custom_pose(bone,t)
-	var t4 = sk.get_bone_custom_pose(sk.find_bone("thigh_R")) *sk.get_bone_custom_pose(sk.find_bone("shin_R"))
+	var t4 = sk.get_bone_custom_pose(sk.find_bone("thigh_r")) *sk.get_bone_custom_pose(sk.find_bone("shin_r"))
 	sk.set_bone_custom_pose(sk.find_bone("spine"),t4)
 	
 

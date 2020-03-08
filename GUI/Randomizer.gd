@@ -45,7 +45,7 @@ func _randomizeGUIvalues():
 	p.get_node("Panel/vb/head/vb/facePaintColor_head")._on_colorPicker_color_changed(randPaintColor)
 	
 func _randomizeBones():
-	var sk = p.character.get_node("MainRig")
+	var sk = p.character.sk
 	randomize()
 	#-------3 STEPS FOR READABILITY
 	for i in 3:
@@ -58,22 +58,22 @@ func _randomizeBones():
 				
 			var t2:Transform
 			t2=t2.translated(Vector3(0,rand_range(-scaleLimit,scaleLimit),0))
-			sk.set_bone_custom_pose(sk.find_bone("shoulder_L"),t2)		
-			sk.set_bone_custom_pose(sk.find_bone("shoulder_R"),t2)	
+			sk.set_bone_custom_pose(sk.find_bone("shoulder_l"),t2)		
+			sk.set_bone_custom_pose(sk.find_bone("shoulder_r"),t2)	
 			
 			var t3:Transform
 			t3=t3.translated(Vector3(0,rand_range(-scaleLimit,scaleLimit),0))
-			sk.set_bone_custom_pose(sk.find_bone("spine3"),t3)
+			sk.set_bone_custom_pose(sk.find_bone("spine_3"),t3)
 			
 		if i==1:
 			var scaleLimit:float=0.02
 			var t:Transform			
 			t=t.translated(Vector3(0,rand_range(-scaleLimit,scaleLimit),0))
-			sk.set_bone_custom_pose(sk.find_bone("spine1"),t)
+			sk.set_bone_custom_pose(sk.find_bone("spine_1"),t)
 			
 			var t2:Transform
 			t2=t2.translated(Vector3(0,rand_range(-scaleLimit,scaleLimit),0))
-			sk.set_bone_custom_pose(sk.find_bone("spine2"),t2)
+			sk.set_bone_custom_pose(sk.find_bone("spine_2"),t2)
 			
 			var t3:Transform
 			t3=t3.translated(Vector3(0,rand_range(-scaleLimit,scaleLimit),0))
@@ -107,9 +107,9 @@ func _randomizeBones():
 	p.get_node("EditBehaviour")._adjustFaceCamHeight()
 
 func _randomizeShapes():
-	var head = p.character.get_node("MainRig/head")
-	var currentBeard:MeshInstance = p.character.get_node("MainRig").find_node("beard?",true,false)
-	var currentHair:MeshInstance = p.character.get_node("MainRig").find_node("hair?",true,false)
+	var head = p.character.sk.get_node("head")
+	var currentBeard:MeshInstance = p.character.sk.find_node("beard?",true,false)
+	var currentHair:MeshInstance = p.character.sk.find_node("hair?",true,false)
 	randomize()
 
 	for b in head.mesh.get_blend_shape_count():
